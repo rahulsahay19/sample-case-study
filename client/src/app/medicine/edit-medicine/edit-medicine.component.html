@@ -1,0 +1,37 @@
+<form name="form" (ngSubmit)="f.form.valid" #f="ngForm" autocomplete="off">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4" *ngIf="medicine">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input class="form-control" id="name" name="name" type="text" [(ngModel)]="medicine.name" required/>
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Price</label>
+                        <input class="form-control" id="price" name="price" type="text" [(ngModel)]="medicine.price" required/>
+                    </div>
+                    <div class="form-group">
+                        <label for="brand">Brand</label>
+                        <input class="form-control" id="brand" type="text" name="brand" [(ngModel)]="medicine.brand" required/>
+                    </div>
+                    <div class="form-group">
+                        <label for="expiryDate">Expiry Date</label>
+                        <input class="form-control" id="expiryDate" name="expiryDate" type="text" [(ngModel)]="medicine.expiryDate" required/>
+                    </div>
+                    <div class="form-group">
+                        <label for="quantity">Quantity</label>
+                        <input class="form-control" id="quantity" name="quantity" type="text" [(ngModel)]="medicine.quantity" required/>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea class="form-control" id="description" name="text" type="text" [(ngModel)]="medicine.text"></textarea>
+                    </div>
+                    <button class="btn btn-primary mr-3" routerLink="/medicine"> Go Back</button>
+                    <button class="btn btn-primary mr-3" type="submit" (click)="editMedicine()" [disabled]="!f.form.valid"> Save</button>
+                    <button class="btn btn-danger" (click)="onDelete()"> Delete</button>
+            </div>
+            <div class="col-lg-4"></div>
+        </div>
+    </div>
+</form>

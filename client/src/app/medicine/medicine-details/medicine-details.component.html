@@ -1,0 +1,14 @@
+<div *ngIf="medicine" class="container-fluid">
+    <div class="row">
+        <div class="col-lg-6">
+           <h2>Name: {{ medicine.name}}</h2>
+        </div>
+        <div class="col-lg-6">
+            <h3>Price: {{medicine.price | currency: 'INR' }}</h3>
+            <h5>Brand: {{medicine.brand}}</h5>
+            <h5>Expiry Date: {{medicine.expiryDate | date: 'short':'IST'}}</h5>
+            <h5>Description: {{medicine.text}}</h5>
+        </div>
+    </div>
+    <button class="btn btn-primary mr-2" routerLink="/medicine"> Go Back</button>    
+</div>
